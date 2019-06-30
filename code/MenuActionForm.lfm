@@ -1,0 +1,88 @@
+object MenuSearchForm: TMenuSearchForm
+  Left = 461
+  Height = 300
+  Top = 306
+  Width = 250
+  Caption = 'Menu finder'
+  ClientHeight = 300
+  ClientWidth = 250
+  Color = clBtnFace
+  Constraints.MinHeight = 300
+  Constraints.MinWidth = 250
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.0.4'
+  object lblPath: TLabel
+    Left = 7
+    Height = 13
+    Top = 271
+    Width = 114
+    Align = alCustom
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = False
+    Caption = 'Path'
+    ParentColor = False
+  end
+  object lblCount: TLabel
+    Left = 234
+    Height = 15
+    Top = 245
+    Width = 6
+    Align = alCustom
+    Alignment = taRightJustify
+    Anchors = [akRight, akBottom]
+    Caption = '0'
+    ParentColor = False
+  end
+  object edFind: TEdit
+    Left = 7
+    Height = 23
+    Top = 8
+    Width = 234
+    Align = alCustom
+    Anchors = [akTop, akLeft, akRight]
+    OnChange = edFindChange
+    TabOrder = 0
+  end
+  object btnExecute: TButton
+    Left = 127
+    Height = 25
+    Top = 267
+    Width = 114
+    Align = alCustom
+    Anchors = [akRight, akBottom]
+    Caption = 'Ejecutar menú'
+    Default = True
+    Enabled = False
+    OnClick = btnExecuteClick
+    TabOrder = 3
+  end
+  object lbMenuItems: TListBox
+    Left = 7
+    Height = 209
+    Top = 35
+    Width = 234
+    Align = alCustom
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    DoubleBuffered = False
+    ItemHeight = 14
+    OnClick = lbMenuItemsClick
+    OnDrawItem = lbMenuItemsDrawItem
+    OnMeasureItem = lbMenuItemsMeasureItem
+    ParentDoubleBuffered = False
+    Style = lbOwnerDrawVariable
+    TabOrder = 1
+  end
+  object chkOnlyExecutables: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 245
+    Width = 166
+    Align = alCustom
+    Anchors = [akLeft, akBottom]
+    Caption = 'Mostrar solo los ejecutables'
+    OnClick = chkOnlyExecutablesClick
+    TabOrder = 2
+  end
+end
